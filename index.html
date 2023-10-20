@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Tiket Travel</title>
+    <title>Booking</title>
+    <script src="booking.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Pemesanan Tiket Travel</h1>
+            <div class="header">
+                <h1>Pemesanan Tiket Travel</h1>
+            </div>   
         <form id="order-form">
             <div class="form-group">
                 <label for="nama">Nama: </label>
@@ -17,6 +20,7 @@
             <div class="form-group">
                 <label for="tujuan">Tujuan: </label>
                 <select name="tujuan" id="tujuan">
+                    <option value="none">---</option>
                     <option value="Bandung">Bandung</option>
                     <option value="Jakarta">Jakarta</option>
                     <option value="Malang">Malang</option>
@@ -26,11 +30,12 @@
             </div>
             <div class="form-group">
                 <label for="harga">Harga: </label>
-                <input type="text" id="harga" name="harga" required>
+                <input type="text" id="harga" name="harga" disabled>
             </div>
             <div class="form-group">
                 <label for="jumlahTiket">Jumlah Tiket: </label>
                 <select name="jumlahTiket" id="jumlahTiket">
+                    <option value="0">-</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -45,20 +50,21 @@
             </div>
             <div class="form-group">
                 <label for="member">Member: </label>
-                <input type="checkbox" id="member" name="member">
+                <input type="checkbox" id="member" name="member" value="member">
             </div>
             <div class="form-group">
                 <label for="diskon">Diskon: </label>
-                <input type="text" id="diskon" name="diskon" required>
+                <input type="text" id="diskon" name="diskon" disabled>
             </div>
             <div class="form-group">
                 <label for="totalBayar">Total Bayar: </label>
-                <input type="text" id="totalBayar" name="totalBayar">
+                <input type="text" id="totalBayar" name="totalBayar" disabled>
             </div>
-            <div class="form-group">
-                <button type="button" onclick="hitungTotalBayar()">Hitung Total Bayar</button>
+            <div class="form-group" id="pesan">
+                <button type="button" onclick="booking()">Booking</button>
             </div>
         </form>
     </div>
+    <script src="booking.js"></script>
 </body>
 </html>
